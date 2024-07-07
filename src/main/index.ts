@@ -10,6 +10,7 @@ export const DiscordClient = new Client({
 DiscordClient.once("ready", () => {
     console.log(`Logged in as ${DiscordClient.user?.tag}`);
     DiscordClient.user?.setActivity({ name: "Ready", type: ActivityType.Playing })
+    // deploySlashCommands({ guildId: YOUR_DEV_SERVER_ID}); // Update slash commands for the development server
 });
 
 DiscordClient.on("guildCreate", async (guild) => {
