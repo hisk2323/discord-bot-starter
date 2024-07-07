@@ -1,0 +1,23 @@
+{
+  "name": "discord-bot-framework",
+  "version": "1.0.0",
+  "description": "Simple starter code for a Discord bot using discord.js and TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/main/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsup src/main/index.ts --minify"
+  },
+  "author": "hisk2323",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "tsx": "^4.15.4"
+  }
+}

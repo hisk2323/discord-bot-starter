@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.insta-state.json
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled JavaScript files
+*.js
+*.js.map
+
+# Compiled TypeScript declaration files
+*.d.ts
+
+# Log files
+*.log
+
+# Build artifacts
+build/
+out/
+package-lock.json
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
