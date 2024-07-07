@@ -11,7 +11,7 @@ type DeployCommandsProps = {
     guildId: string;
 }
 
-export async function deploySlashCommands({ guildId }: DeployCommandsProps) {
+export async function deploySlashCommands({ guildId }: DeployCommandsProps) { // Deploy all slash commands to the specified guild using the Discord REST API
     try {
         console.log("Started refreshing application (/) commands.");
 

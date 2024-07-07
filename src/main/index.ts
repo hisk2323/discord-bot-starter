@@ -3,14 +3,14 @@ import { config } from '../resources/config';
 import { handleSlashCommands, handleTextCommands } from '../resources/handle_commands';
 import { deploySlashCommands } from '../resources/deploy_slash_commands';
 
-export const DiscordClient = new Client({
+export const DiscordClient = new Client({ // create a new Discord client for the bot
     intents: config.intents
 });
 
 DiscordClient.once("ready", () => {
     console.log(`Logged in as ${DiscordClient.user?.tag}`);
     DiscordClient.user?.setActivity({ name: "Ready", type: ActivityType.Playing })
-    // deploySlashCommands({ guildId: YOUR_DEV_SERVER_ID}); // Update slash commands for the development server
+    // deploySlashCommands({ guildId: YOUR_DEV_SERVER_ID}); // Uncomment this line to re-register slash commands to your development server
 });
 
 DiscordClient.on("guildCreate", async (guild) => {
@@ -22,11 +22,11 @@ DiscordClient.on("guildDelete", async (guild) => {
     console.log(`Left a guild: ${guild.name}`);
 });
 
-DiscordClient.on("messageCreate", async (message) => {
+DiscordClient.on("messageCreate", async (message) => { // Handle text commands
     await handleTextCommands(message);
 });
 
-DiscordClient.on("interactionCreate", async (interaction) => { // handle slash commands
+DiscordClient.on("interactionCreate", async (interaction) => { // Handle slash commands
     await handleSlashCommands(interaction);
 });
 
